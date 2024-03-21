@@ -1,0 +1,24 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+@media (max-width:769px) {
+    #id_report_post * {
+        font-size:14px;
+    }
+}
+
+@media (max-width:600px) {
+    .tab_img {
+        display:-webkit-box;
+        display:-ms-flexbox;
+        display:flex;
+    }
+    .tab_chapter {
+        display:none;
+    }
+}
+

@@ -1,0 +1,87 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+/*
+RESET
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    font-weight: 400;
+    line-height: normal;
+    color: inherit;
+    text-transform: none;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+button, select {
+    border: none;
+    all: initial;
+}
+
+.input {
+    width:100%;
+    height:100%;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-align:center;
+        -ms-flex-align:center;
+            align-items:center;
+    -webkit-box-pack:center;
+        -ms-flex-pack:center;
+            justify-content:center;
+    font-size:16px;
+}
+
+a,
+a:hover,
+a:active,
+button:hover,
+input:hover,
+ .active:hover,
+ .active:active {
+    -webkit-transition: 0.2s ease;
+    -o-transition: 0.2s ease;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+body {
+    max-width:1320px;
+    margin:0 auto;
+    padding:30px 10px;
+}
+
+h1,h2,h3,h4,h5,h6,.BIG {
+    font-weight:600;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+p, ul, li, span, input, button.SMALL, option, select {
+    font-weight:400;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+section {
+    border-bottom: 1px solid var(--c8);
+    padding-top:24px;
+    padding-bottom:24px;
+}
+
+body {
+    min-height:100vh;
+}

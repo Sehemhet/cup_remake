@@ -1,0 +1,76 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+.btn {
+    padding: 12px;
+    border-radius:8px;
+    white-space: nowrap;
+}
+.btn_blue {
+    background: var(--c3);
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -ms-flex-pack:distribute;
+        justify-content:space-around;
+    -webkit-box-align:center;
+        -ms-flex-align:center;
+            align-items:center;
+    color: var(--c2);
+}
+.btn_blue:hover {
+    background: var(--c4);
+}
+.btn_blue:active {
+    background: var(--c5);
+}
+.btn_black {
+    background: var(--c1);
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -ms-flex-pack:distribute;
+        justify-content:space-around;
+    -webkit-box-align:center;
+        -ms-flex-align:center;
+            align-items:center;
+    color: var(--c2);
+}
+.btn_black:hover {
+    opacity:.7;
+}
+.btn_black:active {
+    opacity:.3;
+}
+.btn_red {
+    background: var(--c6);
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -ms-flex-pack:distribute;
+        justify-content:space-around;
+    -webkit-box-align:center;
+        -ms-flex-align:center;
+            align-items:center;
+    color: var(--c2);
+}
+.btn_red:hover {
+    opacity:.7;
+}
+.btn_red:active {
+    opacity:.3;
+}
+.btn_tab {
+    font-weight:400;
+    color:var(--c7);
+}
+.btn_tab_active {
+    border-bottom: 2px solid var(--c7);
+    font-weight:600;
+    color:var(--c1);
+}
+

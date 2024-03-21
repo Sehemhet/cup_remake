@@ -1,0 +1,1272 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="min.css">
+</head>
+
+<body class="f fc gap30 rel">
+<!--Табы Кнопки-->
+<section class="f fac gap8 f_f">
+    <button class="btn_tab pad8t pad8b" onclick="showTab('tab_1', this)">
+        <span class="tab_chapter">
+            Оформлення
+        </span>
+        <img class="tab_img" src="img/tab1.png" alt="">
+    </button>
+    <button class="btn_tab pad8t pad8b" onclick="showTab('tab_2', this)">
+            <span class="tab_chapter">
+                Піч
+            </span>
+        <img class="tab_img" src="img/tab2.png" alt="">
+    </button>
+    <button class="btn_tab pad8t pad8b" onclick="showTab('tab_3', this)">
+            <span class="tab_chapter">
+                Напівфабрикат
+            </span>
+        <img class="tab_img" src="img/tab3.png" alt="">
+    </button>
+    <button class="btn_tab pad8t pad8b" onclick="showTab('tab_4', this)">
+            <span class="tab_chapter">
+                Поклейка
+            </span>
+        <img class="tab_img" src="img/tab4.png" alt="">
+    </button>
+    <button class="btn_tab pad8t pad8b" onclick="showTab('tab_5', this)">
+            <span class="tab_chapter">
+                Готове
+            </span>
+        <img class="tab_img" src="img/tab5.png" alt="">
+    </button>
+    <button class="btn_tab pad8t pad8b" onclick="showTab('tab_6', this)">
+            <span class="tab_chapter">
+                Звіт
+            </span>
+        <img class="tab_img" src="img/tab6.png" alt="">
+    </button>
+    <button class="btn_tab pad8t pad8b" onclick="showTab('tab_7', this)">
+            <span class="tab_chapter">
+                Редагування
+            </span>
+        <img class="tab_img" src="img/tab7.png" alt="">
+    </button>
+</section>
+
+<!--Время-->
+<section class="f gap8 fac">
+    <span id="currentDateTime">
+
+    </span>
+</section>
+
+<!--Таб 1 (ОФОРМЛЕНИЕ)-->
+<section id="tab_1" class="tabs__block f fc gap60">
+    <form id="tab_1_form" class="f fw w gap8 f_f">
+        <!--Стекло-->
+        <div class="f fc gap8 f_250">
+            <div class="w BIG">
+                Скло
+            </div>
+            <div class="w f fc">
+                <input type="text" name="tab_1_glass" list="tab_1_glass" placeholder="Оберіть скло" class="shadow pad8" required/>
+                <datalist id="tab_1_glass" class="shadow">
+                    <option value="100 Рюмка">
+                        <span class="count">
+                            100
+                        </span>
+                        <span class="name_glass">
+                            Рюмка
+                        </span>
+                    </option>
+                    <option value="2001 Стакан">
+                        <span class="count">
+                            2001
+                        </span>
+                        <span class="name_glass">
+                            Стакан
+                        </span>
+                    </option>
+                    <option value="1999 Пинта">
+                        <span class="count">
+                            1999
+                        </span>
+                        <span class="name_glass">
+                            Пинта
+                        </span>
+                    </option>
+                </datalist>
+            </div>
+        </div>
+        <!--К-сть-->
+        <div class="f fc gap8 f_80">
+            <div class="BIG">
+                К-сть
+            </div>
+            <div class="shadow  h_50m f gap20 fac _br8 list_open">
+                <input type="number" pattern="\d" required/>
+            </div>
+        </div>
+        <!--Виемка-->
+        <div class="f fc gap8 f_300">
+            <div class="BIG">
+                Виїмка
+            </div>
+            <div class="w f fc">
+                <input type="text" name="tab_1_insert" list="tab_1_insert" placeholder="Оберіть виїмку" class="shadow pad8" required/>
+                <datalist id="tab_1_insert" class="shadow">
+                    <option value="Куля"/>
+                    <option value="Герб"/>
+                    <option value="Проріз"/>
+                </datalist>
+            </div>
+        </div>
+        <!--Специалист-->
+        <div class="f fc gap8 f_200">
+            <div class="w BIG">
+                Працівник
+            </div>
+            <div class="w f fc">
+                <input type="text" name="tab_1_master" list="tab_1_master" placeholder="Оберіть фахівця" class="shadow pad8" required/>
+                <datalist id="tab_1_master" class="shadow">
+                    <option value="Василь Іванович"/>
+                    <option value="Олег Рибко"/>
+                    <option value="Андрій Круг"/>
+                    <option value="Олексій Швиряго"/>
+                    <option value="Олеся Повна"/>
+                </datalist>
+            </div>
+        </div>
+        <!--Скрытый-->
+        <input type="hidden" name="action" value="tab_1_form_hidden">
+        <!--Действие-->
+        <div class="f fc gap8 f_250_10">
+            <div class="w BIG">
+                Дія
+            </div>
+            <div class="shadow f gap8 h_50m">
+                <button class="btn btn_blue f_auto" type="submit"> Піч </button>
+                <button class="btn btn_red f_auto" type="submit"> Брак </button>
+            </div>
+        </div>
+    </form>
+    <script>
+
+    </script>
+
+    <div class="f w fw gap30 list_stock">
+        <div class="f fc gap8 shadow pad8 _br8 f_300 h300M">
+            <h3>
+                Скло
+            </h3>
+            <input type="text" name="" placeholder="Пошук скла" id="search_list_glass" oninput="liveSearch('list_glass', this.value)">
+            <ul id="list_glass" class="f fc gap8 h300M scroll">
+                <li class="f fac gap8 list_item">
+                    <span>
+                        100
+                    </span>
+                    <span>
+                        Рюмка
+                    </span>
+                </li>
+                <li class="f fac gap8 list_item">
+                    <span>
+                        2001
+                    </span>
+                    <span>
+                        Стакан
+                    </span>
+                </li>
+                <li class="f fac gap8 list_item">
+                    <span>
+                        1999
+                    </span>
+                    <span>
+                        Пинта
+                    </span>
+                </li>
+            </ul>
+        </div>
+        <div class="f fc gap8 shadow pad8 _br8 f_300 h300M">
+            <h3>
+                Виїмка
+            </h3>
+            <input type="text" name="" placeholder="Пошук виїмки" id="search_list_insert" oninput="liveSearch('list_insert', this.value)">
+            <ul id="list_insert" class="f fc gap8 h300M scroll">
+                <li class="f fac gap8 list_item">
+                    Пуля
+                </li>
+                <li class="f fac gap8 list_item">
+                    Герб
+                </li>
+                <li class="f fac gap8 list_item">
+                    Прорез
+                </li>
+            </ul>
+        </div>
+        <div class="f fc gap8 shadow pad8 _br8 f_300 h300M">
+            <h3>
+                Вставка
+            </h3>
+            <input type="text" name="" placeholder="Пошук вставки" id="search_list_stick" oninput="liveSearch('list_stick', this.value)">
+            <ul id="list_stick" class="f fc gap8 h300M scroll">
+                <li class="f fac gap8 list_item">
+                    <span>
+                        100
+                    </span>
+                    <span>
+                        Пуля бронза
+                    </span>
+                </li>
+                <li class="f fac gap8 list_item">
+                    <span>
+                        2001
+                    </span>
+                    <span>
+                        Пуля серебро
+                    </span>
+                </li>
+                <li class="f fac gap8 list_item">
+                    <span>
+                        1999
+                    </span>
+                    <span>
+                        Пуля золото
+                    </span>
+                </li>
+                <li class="f fac gap8 list_item">
+                    <span>
+                        100
+                    </span>
+                    <span>
+                        Пуля бронза
+                    </span>
+                </li>
+                <li class="f fac gap8 list_item">
+                    <span>
+                        2001
+                    </span>
+                    <span>
+                        Пуля серебро
+                    </span>
+                </li>
+                <li class="f fac gap8 list_item">
+                    <span>
+                        1999
+                    </span>
+                    <span>
+                        Пуля золото
+                    </span>
+                </li>
+                <li class="f fac gap8 list_item">
+                    <span>
+                        1999
+                    </span>
+                    <span>
+                        Пуля золото
+                    </span>
+                </li>
+                <li class="f fac gap8 list_item">
+                    <span>
+                        100
+                    </span>
+                    <span>
+                        Пуля бронза
+                    </span>
+                </li>
+                <li class="f fac gap8 list_item">
+                    <span>
+                        2001
+                    </span>
+                    <span>
+                        Пуля серебро
+                    </span>
+                </li>
+                <li class="f fac gap8 list_item">
+                    <span>
+                        1999
+                    </span>
+                    <span>
+                        Пуля золото
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</section>
+
+<!--ТАБ 2 (ПЕЧЬ)-->
+<section id="tab_2" class="tabs__block f fc gap60">
+    <form id="tab_2_form" class="f fw w gap8 f_f">
+        <!--Стекло-->
+        <div class="f fc gap8 f_250">
+            <div class="w BIG">
+                Скло
+            </div>
+            <div class="w f fc">
+                <input type="text" name="tab_2_glass" list="tab_2_glass" placeholder="Оберіть скло" class="shadow pad8" required/>
+                <datalist id="tab_2_glass" class="shadow">
+                    <option value="100 Рюмка Пуля">
+                        <span class="count">
+                            100
+                        </span>
+                        <span class="name_glass">
+                            Рюмка
+                        </span>
+                        <span class="name_insert">
+                            Пуля
+                        </span>
+                    </option>
+                    <option value="2001 Стакан Герб">
+                        <span class="count">
+                            2001
+                        </span>
+                        <span class="name_glass">
+                            Стакан
+                        </span>
+                        <span class="name_insert">
+                            Герб
+                        </span>
+                    </option>
+                    <option value="1999 Пинта Прорез">
+                        <span class="count">
+                            1999
+                        </span>
+                        <span class="name_glass">
+                            Пинта
+                        </span>
+                        <span class="name_insert">
+                            Прорез
+                        </span>
+                    </option>
+                </datalist>
+            </div>
+        </div>
+        <!--К-сть-->
+        <div class="f fc gap8 f_80">
+            <div class="BIG">
+                К-сть
+            </div>
+            <div class="shadow  h_50m f gap20 fac _br8 list_open">
+                <input type="number" pattern="\d" required/>
+            </div>
+        </div>
+        <!--Специалист-->
+        <div class="f fc gap8 f_200">
+            <div class="w BIG">
+                Працівник
+            </div>
+            <div class="w f fc">
+                <input type="text" name="tab_2_master" list="tab_2_master" placeholder="Оберіть фахівця" class="shadow pad8" required/>
+                <datalist id="tab_2_master" class="shadow">
+                    <option value="Василь Іванович"/>
+                    <option value="Олег Рибко"/>
+                    <option value="Андрій Круг"/>
+                    <option value="Олексій Швиряго"/>
+                    <option value="Олеся Повна"/>
+                </datalist>
+            </div>
+        </div>
+        <!--Скрытый-->
+        <input type="hidden" name="action" value="tab_2_form_hidden">
+        <!--Действие-->
+        <div class="f fc gap8 f_250_10">
+            <div class="w BIG">
+                Дія
+            </div>
+            <div class="shadow f gap8 h_50m">
+                <button class="btn btn_blue f_auto" type="submit"> Напівфабрикат </button>
+                <button class="btn btn_red f_auto" type="submit"> Брак </button>
+                <button class="btn btn_black f_auto" type="submit"> Повернути </button>
+            </div>
+        </div>
+    </form>
+    <script>
+
+    </script>
+    <div class="f w fw gap30 list_stock">
+        <div class="f fc gap8 shadow pad8 _br8 f_300 h300M">
+            <h3>
+                В печі
+            </h3>
+            <input type="text" name="" placeholder="Пошук скла" id="tab_2_list_search" oninput="liveSearch('tab_2_list', this.value)">
+            <ul id="tab_2_list" class="f fc gap8 h300M scroll">
+                <li class="f fac gap8 list_item">
+                    <span>
+                        100
+                    </span>
+                    <span class="c4">
+                        Рюмка
+                    </span>
+                    <span class="c9">
+                        Пуля
+                    </span>
+                </li>
+                <li class="f fac gap8 list_item">
+                    <span>
+                        2001
+                    </span>
+                    <span class="c4">
+                        Стакан
+                    </span>
+                    <span class="c9">
+                        Прорез
+                    </span>
+                </li>
+                <li class="f fac gap8 list_item">
+                    <span>
+                        1999
+                    </span>
+                    <span class="c4">
+                        Пинта
+                    </span>
+                    <span class="c9">
+                        Герб
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!--ТАБ 3 (ПОЛУФАБРИКАТ)-->
+<section id="tab_3" class="tabs__block f fc gap60">
+    <form id="tab_3_form" class="f fw w gap8 f_f">
+        <!--Посуда-->
+        <div class="f fc gap8 f_250">
+            <div class="w BIG">
+                Посуд
+            </div>
+            <div class="w f fc">
+                <input type="text" name="tab_3_glass" list="tab_3_glass" placeholder="Оберіть скло" class="shadow pad8" required/>
+                <datalist id="tab_3_glass" class="shadow">
+                    <option value="100 Рюмка Пуля">
+                        <span class="count">
+                            100
+                        </span>
+                        <span class="name_glass">
+                            Рюмка
+                        </span>
+                        <span class="name_insert">
+                            Пуля
+                        </span>
+                    </option>
+                    <option value="2001 Стакан Герб">
+                        <span class="count">
+                            2001
+                        </span>
+                        <span class="name_glass">
+                            Стакан
+                        </span>
+                        <span class="name_insert">
+                            Герб
+                        </span>
+                    </option>
+                    <option value="1999 Пинта Прорез">
+                        <span class="count">
+                            1999
+                        </span>
+                        <span class="name_glass">
+                            Пинта
+                        </span>
+                        <span class="name_insert">
+                            Прорез
+                        </span>
+                    </option>
+                </datalist>
+            </div>
+        </div>
+        <!--К-сть-->
+        <div class="f fc gap8 f_80">
+            <div class="BIG">
+                К-сть
+            </div>
+            <div class="shadow  h_50m f gap20 fac _br8 list_open">
+                <input type="number" pattern="\d" required/>
+            </div>
+        </div>
+        <!--Вставки-->
+        <div class="f fw w gap20 f_f w">
+            <div class="f gap8 fac shadow pad4 _br8 f_auto">
+                <!--Вставка 1-->
+                <div class="f fc gap8 f_300">
+                    <div class="BIG">
+                        Вставка 1
+                    </div>
+                    <div class="w f fc">
+                        <input type="text" name="tab_3_stick_1" list="tab_3_stick_1" placeholder="Оберіть виїмку" class="shadow pad8" required/>
+                        <datalist id="tab_3_stick_1" class="shadow">
+                            <option value="1999 Пуля бронза"/>
+                            <option value="2000 Пуля серебро"/>
+                            <option value="2001 Пуля золото"/>
+                        </datalist>
+                    </div>
+                </div>
+                <!--К-сть-->
+                <div class="f fc gap8 f_80">
+                    <div class="BIG">
+                        К-сть
+                    </div>
+                    <div class="shadow  h_50m f gap20 fac _br8 list_open">
+                        <input type="number" pattern="\d" required/>
+                    </div>
+                </div>
+            </div>
+            <div class="f gap8 fac shadow pad4 _br8 f_auto">
+                <!--Вставка 2-->
+                <div class="f fc gap8 f_300">
+                    <div class="BIG">
+                        Вставка 2
+                    </div>
+                    <div class="w f fc">
+                        <input type="text" name="tab_3_stick_2" list="tab_3_stick_2" placeholder="Оберіть виїмку" class="shadow pad8" required/>
+                        <datalist id="tab_3_stick_2" class="shadow">
+                            <option value="1999 Пуля бронза"/>
+                            <option value="2000 Пуля серебро"/>
+                            <option value="2001 Пуля золото"/>
+                        </datalist>
+                    </div>
+                </div>
+                <!--К-сть-->
+                <div class="f fc gap8 f_80">
+                    <div class="BIG">
+                        К-сть
+                    </div>
+                    <div class="shadow  h_50m f gap20 fac _br8 list_open">
+                        <input type="number" pattern="\d" required/>
+                    </div>
+                </div>
+            </div>
+            <div class="f gap8 fac shadow pad4 _br8 f_auto">
+                <!--Вставка 3-->
+                <div class="f fc gap8 f_300">
+                    <div class="BIG">
+                        Вставка 3
+                    </div>
+                    <div class="w f fc">
+                        <input type="text" name="tab_3_stick_3" list="tab_3_stick_3" placeholder="Оберіть виїмку" class="shadow pad8" required/>
+                        <datalist id="tab_3_stick_3" class="shadow">
+                            <option value="1999 Пуля бронза"/>
+                            <option value="2000 Пуля серебро"/>
+                            <option value="2001 Пуля золото"/>
+                        </datalist>
+                    </div>
+                </div>
+                <!--К-сть-->
+                <div class="f fc gap8 f_80">
+                    <div class="BIG">
+                        К-сть
+                    </div>
+                    <div class="shadow  h_50m f gap20 fac _br8 list_open">
+                        <input type="number" pattern="\d" required/>
+                    </div>
+                </div>
+            </div>
+            <div class="f gap8 fac shadow pad4 _br8 f_auto">
+                <!--Вставка індівідуальна-->
+                <div class="f fc gap8 f_300">
+                    <div class="BIG">
+                        Вставка індівідуальна
+                    </div>
+                    <div class="w f fc">
+                        <input type="text" placeholder="індівідуальна" class="shadow pad8" required/>
+                    </div>
+                </div>
+                <!--К-сть-->
+                <div class="f fc gap8 f_80">
+                    <div class="BIG">
+                        К-сть
+                    </div>
+                    <div class="shadow  h_50m f gap20 fac _br8 list_open">
+                        <input type="number" pattern="\d" required/>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--Специалист-->
+        <div class="f fc gap8 f_200">
+            <div class="w BIG">
+                Працівник
+            </div>
+            <div class="w f fc">
+                <input type="text" name="tab_3_master" list="tab_3_master" placeholder="Оберіть фахівця" class="shadow pad8" required/>
+                <datalist id="tab_3_master" class="shadow">
+                    <option value="Василь Іванович"/>
+                    <option value="Олег Рибко"/>
+                    <option value="Андрій Круг"/>
+                    <option value="Олексій Швиряго"/>
+                    <option value="Олеся Повна"/>
+                </datalist>
+            </div>
+        </div>
+        <!--Скрытый-->
+        <input type="hidden" name="action" value="tab_3_form_hidden">
+        <!--Действие-->
+        <div class="f fc gap8 f_250_10">
+            <div class="w BIG">
+                Дія
+            </div>
+            <div class="shadow f gap8 h_50m">
+                <button class="btn btn_blue f_auto" type="submit"> Поклейка </button>
+                <button class="btn btn_red f_auto" type="submit"> Брак </button>
+                <button class="btn btn_black f_auto" type="submit"> Повернути </button>
+            </div>
+        </div>
+    </form>
+    <script>
+
+    </script>
+    <div class="f w fw gap30 list_stock">
+        <div class="f fc gap8 shadow pad8 _br8 f_300 h300M">
+            <h3>
+                Напівфабрикат
+            </h3>
+            <input type="text" name="" placeholder="Пошук скла" id="tab_3_list_search" oninput="liveSearch('tab_3_list', this.value)">
+            <ul id="tab_3_list" class="f fc gap8 h300M scroll">
+                <li class="f fac gap8 list_item">
+                    <span>
+                        100
+                    </span>
+                    <span class="c4">
+                        Рюмка
+                    </span>
+                    <span class="c9">
+                        Пуля
+                    </span>
+                </li>
+                <li class="f fac gap8 list_item">
+                    <span>
+                        2001
+                    </span>
+                    <span class="c4">
+                        Стакан
+                    </span>
+                    <span class="c9">
+                        Прорез
+                    </span>
+                </li>
+                <li class="f fac gap8 list_item">
+                    <span>
+                        1999
+                    </span>
+                    <span class="c4">
+                        Пинта
+                    </span>
+                    <span class="c9">
+                        Герб
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!--ТАБ 4 (ПОКЛЕЙКА)-->
+<section id="tab_4" class="tabs__block f fc gap60">
+    <form id="tab_4_form" class="f fw w gap8 f_f">
+        <!--Стекло-->
+        <div class="f fc gap8 f_250">
+            <div class="w BIG">
+                Посуд
+            </div>
+            <div class="w f fc">
+                <input type="text" name="tab_4_product" list="tab_4_product" placeholder="Оберіть скло" class="shadow pad8" required/>
+                <datalist id="tab_4_product" class="shadow">
+                    <option value="100 Рюмка Пуля">
+                        <span class="count">
+                            100
+                        </span>
+                        <span class="name_glass">
+                            Рюмка
+                        </span>
+                        <span class="name_insert">
+                            Пуля
+                        </span>
+                    </option>
+                    <option value="2001 Стакан Герб">
+                        <span class="count">
+                            2001
+                        </span>
+                        <span class="name_glass">
+                            Стакан
+                        </span>
+                        <span class="name_insert">
+                            Герб
+                        </span>
+                    </option>
+                    <option value="1999 Пинта Прорез">
+                        <span class="count">
+                            1999
+                        </span>
+                        <span class="name_glass">
+                            Пинта
+                        </span>
+                        <span class="name_insert">
+                            Прорез
+                        </span>
+                    </option>
+                </datalist>
+            </div>
+        </div>
+        <!--К-сть-->
+        <div class="f fc gap8 f_80">
+            <div class="BIG">
+                К-сть
+            </div>
+            <div class="shadow  h_50m f gap20 fac _br8 list_open">
+                <input type="number" pattern="\d" required/>
+            </div>
+        </div>
+        <!--Специалист-->
+        <div class="f fc gap8 f_200">
+            <div class="w BIG">
+                Працівник
+            </div>
+            <div class="w f fc">
+                <input type="text" name="tab_4_master" list="tab_4_master" placeholder="Оберіть фахівця" class="shadow pad8" required/>
+                <datalist id="tab_4_master" class="shadow">
+                    <option value="Василь Іванович"/>
+                    <option value="Олег Рибко"/>
+                    <option value="Андрій Круг"/>
+                    <option value="Олексій Швиряго"/>
+                    <option value="Олеся Повна"/>
+                </datalist>
+            </div>
+        </div>
+        <!--Скрытый-->
+        <input type="hidden" name="action" value="tab_4_form_hidden">
+        <!--Действие-->
+        <div class="f fc gap8 f_250_10">
+            <div class="w BIG">
+                Дія
+            </div>
+            <div class="shadow f gap8 h_50m">
+                <button class="btn btn_blue f_auto" type="submit"> Готове </button>
+                <button class="btn btn_red f_auto" type="submit"> Брак </button>
+                <button class="btn btn_black f_auto" type="submit"> Повернути </button>
+            </div>
+        </div>
+    </form>
+    <script>
+
+    </script>
+    <div class="f w fw gap30 list_stock">
+        <div class="f fc gap8 shadow pad8 _br8 f_300 h300M">
+            <h3>
+                Напівфабрикат
+            </h3>
+            <input type="text" name="" placeholder="Пошук скла" id="tab_4_list_search" oninput="liveSearch('tab_4_list', this.value)">
+            <ul id="tab_4_list" class="f fc gap8 h300M scroll">
+                <li class="f fac gap8 list_item">
+                    <span>
+                        100
+                    </span>
+                    <span class="c4">
+                        Рюмка
+                    </span>
+                    <span class="c9">
+                        Пуля
+                    </span>
+                    <ul>
+                        <li class="f fac gap8 c10">
+                            <span>
+                                Пуля бронза
+                            </span>
+                            <span>
+                                2
+                            </span>
+                        </li>
+                    </ul>
+                </li>
+                <li class="f fac gap8 list_item">
+                    <span>
+                        2001
+                    </span>
+                    <span class="c4">
+                        Стакан
+                    </span>
+                    <span class="c9">
+                        Прорез
+                    </span>
+                    <ul>
+                        <li class="f fac gap8 c10">
+                            <span>
+                                Кредитка
+                            </span>
+                            <span>
+                                1
+                            </span>
+                        </li>
+                    </ul>
+                </li>
+                <li class="f fac gap8 list_item">
+                    <span>
+                        1999
+                    </span>
+                    <span class="c4">
+                        Пинта
+                    </span>
+                    <span class="c9">
+                        Герб
+                    </span>
+                    <ul>
+                        <li class="f fac gap8 c10">
+                            <span>
+                                Пуля золото
+                            </span>
+                            <span>
+                                3
+                            </span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!--ТАБ 5 (ГОТОВОЕ)-->
+<section id="tab_5" class="tabs__block f fc gap60">
+    <form id="tab_5_form" class="f fw w gap8 f_f">
+        <!--Стекло-->
+        <div class="f fc gap8 f_250">
+            <div class="w BIG">
+                Продукт
+            </div>
+            <div class="w f fc">
+                <input type="text" name="tab_5_product" list="tab_5_product" placeholder="Оберіть скло" class="shadow pad8" required/>
+                <datalist id="tab_5_product" class="shadow">
+                    <option value="100 Рюмка Пуля">
+                        <span class="count">
+                            100
+                        </span>
+                        <span class="name_glass">
+                            Рюмка
+                        </span>
+                        <span class="name_insert">
+                            Пуля
+                        </span>
+                    </option>
+                    <option value="2001 Стакан Герб">
+                        <span class="count">
+                            2001
+                        </span>
+                        <span class="name_glass">
+                            Стакан
+                        </span>
+                        <span class="name_insert">
+                            Герб
+                        </span>
+                    </option>
+                    <option value="1999 Пинта Прорез">
+                        <span class="count">
+                            1999
+                        </span>
+                        <span class="name_glass">
+                            Пинта
+                        </span>
+                        <span class="name_insert">
+                            Прорез
+                        </span>
+                    </option>
+                </datalist>
+            </div>
+        </div>
+        <!--К-сть-->
+        <div class="f fc gap8 f_80">
+            <div class="BIG">
+                К-сть
+            </div>
+            <div class="shadow  h_50m f gap20 fac _br8 list_open">
+                <input type="number" pattern="\d" required/>
+            </div>
+        </div>
+        <!--Специалист-->
+        <div class="f fc gap8 f_200">
+            <div class="w BIG">
+                Працівник
+            </div>
+            <div class="w f fc">
+                <input type="text" name="tab_5_master" list="tab_5_master" placeholder="Оберіть фахівця" class="shadow pad8" required/>
+                <datalist id="tab_5_master" class="shadow">
+                    <option value="Василь Іванович"/>
+                    <option value="Олег Рибко"/>
+                    <option value="Андрій Круг"/>
+                    <option value="Олексій Швиряго"/>
+                    <option value="Олеся Повна"/>
+                </datalist>
+            </div>
+        </div>
+        <!--Скрытый-->
+        <input type="hidden" name="action" value="tab_5_form_hidden">
+        <!--Действие-->
+        <div class="f fc gap8 f_250_10">
+            <div class="w BIG">
+                Дія
+            </div>
+            <div class="shadow f gap8 h_50m">
+                <button class="btn btn_blue f_auto" type="submit"> Продано </button>
+                <button class="btn btn_red f_auto" type="submit"> Брак </button>
+                <button class="btn btn_black f_auto" type="submit"> Повернути </button>
+            </div>
+        </div>
+    </form>
+    <script>
+
+    </script>
+</section>
+
+<!--ТАБ 6 (ОТЧЕТ)-->
+<section id="tab_6" class="tabs__block f fw gap8">
+
+    <div id="id_report_filter" class="w f gap4 f_f _b_b _b_t pad4">
+        <div class=" f f_f fac f_150 pad8l pad8r _b_l _b_r id_report_filter_tiem">
+            <input id="searchAction" class="input_none_img" type="text" placeholder="Дія" oninput="searchValue('searchAction','id_report_post_item_action','id_report_post')">
+        </div>
+        <div class=" f f_f fac f_200 pad8l pad8r _b_l _b_r id_report_filter_tiem">
+            <input id="searchName" class="input_none_img" type="text" placeholder="Найменування" oninput="searchValue('searchName','id_report_post_item_name','id_report_post')">
+        </div>
+        <div class=" f f_f fac f_80 pad8l pad8r _b_l _b_r id_report_filter_tiem">
+            <input id="searchCount" class="input_none_img" type="text" placeholder="К-сть" oninput="searchValue('searchCount','id_report_post_item_count','id_report_post')">
+        </div>
+        <div class=" f f_f fac f_200 pad8l pad8r _b_l _b_r id_report_filter_tiem">
+            <input id="searchMaster" class="input_none_img" type="text" placeholder="Фахівець" oninput="searchValue('searchMaster','id_report_post_item_master','id_report_post')">
+        </div>
+        <div class=" f f_f fac f_80 pad8l pad8r _b_l _b_r id_report_filter_tiem">
+            <input id="searchTime" class="input_none_img" type="text" placeholder="Фахівець" oninput="searchValue('searchTime','id_report_post_item_time','id_report_post')">
+        </div>
+    </div>
+    <!--Перечень таблицы-->
+    <ul id="id_report_post" class="w f gap8 f_f fc">
+        <li class="id_report_post_item gap4 fac _b_b _b_t b2 pad4">
+            <div class="id_report_post_item_action pad4 f_150 _b_l _b_r id_report_post_column">
+                Печь
+            </div>
+            <div class="id_report_post_item_name pad4 f_200 _b_l _b_r id_report_post_column f fac">
+                Рюмка Рюмка Рюмка Рюмка Рюмка Рюмка
+            </div>
+            <div class="id_report_post_item_count pad4 f_80 _b_l _b_r id_report_post_column f fac">
+                2000
+            </div>
+            <div class="id_report_post_item_master pad4 f_200 _b_l _b_r id_report_post_column f fac">
+                Мастер
+            </div>
+            <div class="id_report_post_item_time pad4 f_80 _b_l _b_r id_report_post_column f fac">
+                10:30
+            </div>
+        </li>
+        <li class="id_report_post_item gap4 fac _b_b _b_t b2 pad4">
+            <div class="id_report_post_item_action pad4 f_150 _b_l _b_r id_report_post_column">
+                Брак
+            </div>
+            <div class="id_report_post_item_name pad4 f_200 _b_l _b_r id_report_post_column f fac">
+                Бокал
+            </div>
+            <div class="id_report_post_item_count pad4 f_80 _b_l _b_r id_report_post_column f fac">
+                1000
+            </div>
+            <div class="id_report_post_item_master pad4 f_200 _b_l _b_r id_report_post_column f fac">
+                Маргарита
+            </div>
+            <div class="id_report_post_item_time pad4 f_80 _b_l _b_r id_report_post_column f fac">
+                10:00
+            </div>
+        </li>
+        <li class="id_report_post_item gap4 fac _b_b _b_t b2 pad4">
+            <div class="id_report_post_item_action pad4 f_150 _b_l _b_r id_report_post_column">
+                Напівфабрикат
+            </div>
+            <div class="id_report_post_item_name pad4 f_200 _b_l _b_r id_report_post_column f fac">
+                Бокал
+            </div>
+            <div class="id_report_post_item_count pad4 f_80 _b_l _b_r id_report_post_column f fac">
+                1000
+            </div>
+            <div class="id_report_post_item_master pad4 f_200 _b_l _b_r id_report_post_column f fac">
+                Мастер
+            </div>
+            <div class="id_report_post_item_time pad4 f_80 _b_l _b_r id_report_post_column f fac">
+                11:30
+            </div>
+        </li>
+        <li class="id_report_post_item gap4 fac _b_b _b_t b2 pad4">
+            <div class="id_report_post_item_action pad4 f_150 _b_l _b_r id_report_post_column">
+                Поклейка
+            </div>
+            <div class="id_report_post_item_name pad4 f_200 _b_l _b_r id_report_post_column f fac">
+                Рюмка
+            </div>
+            <div class="id_report_post_item_count pad4 f_80 _b_l _b_r id_report_post_column f fac">
+                1000
+            </div>
+            <div class="id_report_post_item_master pad4 f_200 _b_l _b_r id_report_post_column f fac">
+                Маргарита
+            </div>
+            <div class="id_report_post_item_time pad4 f_80 _b_l _b_r id_report_post_column f fac">
+                10:00
+            </div>
+        </li>
+    </ul>
+</section>
+
+<!--ТАБ 7 (РЕДАКТИРОВАНИЕ)-->
+<section id="tab_7" class="tabs__block">
+    <div class="f w fw gap60">
+        <!-- Скло -->
+        <form action="" id="editing_glass_form" class="f fw w gap8 f_f">
+            <!--Стекло-->
+            <div class="f fc gap8 f_250">
+                <div class="w BIG">
+                    Скло
+                </div>
+                <div class="w f fc">
+                    <input type="text" name="tab_7_glass" list="tab_7_glass" placeholder="Оберіть скло" class="shadow pad8" required/>
+                    <datalist id="tab_7_glass" class="shadow">
+                        <option value="100 Рюмка">
+                        <span class="count">
+                            100
+                        </span>
+                            <span class="name_glass">
+                            Рюмка
+                        </span>
+                        </option>
+                        <option value="2001 Стакан">
+                        <span class="count">
+                            2001
+                        </span>
+                            <span class="name_glass">
+                            Стакан
+                        </span>
+                        </option>
+                        <option value="1999 Пинта">
+                        <span class="count">
+                            1999
+                        </span>
+                            <span class="name_glass">
+                            Пинта
+                        </span>
+                        </option>
+                    </datalist>
+                </div>
+            </div>
+            <!--К-сть-->
+            <div class="f fc gap8 f_80">
+                <div class="BIG">
+                    К-сть
+                </div>
+                <div class="shadow  h_50m f gap20 fac _br8 list_open">
+                    <input type="number" pattern="\d" required/>
+                </div>
+            </div>
+            <!--Специалист-->
+            <div class="f fc gap8 f_200">
+                <div class="w BIG">
+                    Працівник
+                </div>
+                <div class="w f fc">
+                    <input type="text" name="tab_7_glass_master" list="tab_7_glass_master" placeholder="Оберіть фахівця" class="shadow pad8" required/>
+                    <datalist id="tab_7_glass_master" class="shadow">
+                        <option value="Василь Іванович"/>
+                        <option value="Олег Рибко"/>
+                        <option value="Андрій Круг"/>
+                        <option value="Олексій Швиряго"/>
+                        <option value="Олеся Повна"/>
+                    </datalist>
+                </div>
+            </div>
+            <!--Скрытый-->
+            <input type="hidden" name="action" value="glass_form">
+            <!--Действие-->
+            <div class="f fc gap8 f_300">
+                <div class="w BIG">
+                    Дія
+                </div>
+                <div class="f fac gap8">
+                    <button class="btn f_auto shadow f _f_ fac" type="submit">
+                        <img class="img_act" src="img/item_plus.png" alt="Додати">
+                    </button>
+                    <button class="btn f_auto shadow f _f_ fac" type="submit">
+                        <img class="img_act" src="img/item_minus.png" alt="Відняти">
+                    </button>
+                    <button class="btn f_auto shadow f _f_ fac" type="submit">
+                        <img class="img_act" src="img/item_new.png" alt="Нове">
+                    </button>
+                    <button class="btn f_auto shadow f _f_ fac" type="submit">
+                        <img class="img_act" src="img/item_delete.png" alt="Стерти">
+                    </button>
+                </div>
+            </div>
+        </form>
+        <!-- Виїмка -->
+        <form action="" id="editing_insert_form" class="f fw w gap8 f_f">
+            <!--Виемка-->
+            <div class="f fc gap8 f_250">
+                <div class="BIG">
+                    Виїмка
+                </div>
+                <div class="w f fc">
+                    <input type="text" name="tab_7_insert" list="tab_7_insert" placeholder="Оберіть виїмку" class="shadow pad8" required/>
+                    <datalist id="tab_7_insert" class="shadow">
+                        <option value="Куля"/>
+                        <option value="Герб"/>
+                        <option value="Проріз"/>
+                    </datalist>
+                </div>
+            </div>
+            <!--К-сть-->
+            <div class="f fc gap8 f_80">
+                <div class="BIG">
+                    К-сть
+                </div>
+                <div class="shadow  h_50m f gap20 fac _br8 list_open">
+                    <input type="number" pattern="\d" required/>
+                </div>
+            </div>
+            <!--Специалист-->
+            <div class="f fc gap8 f_200">
+                <div class="w BIG">
+                    Працівник
+                </div>
+                <div class="w f fc">
+                    <input type="text" name="tab_7_insert_master" list="tab_7_insert_master" placeholder="Оберіть фахівця" class="shadow pad8" required/>
+                    <datalist id="tab_7_insert_master" class="shadow">
+                        <option value="Василь Іванович"/>
+                        <option value="Олег Рибко"/>
+                        <option value="Андрій Круг"/>
+                        <option value="Олексій Швиряго"/>
+                        <option value="Олеся Повна"/>
+                    </datalist>
+                </div>
+            </div>
+            <!--Скрытый-->
+            <input type="hidden" name="action" value="insert_form">
+            <!--Действие-->
+            <div class="f fc gap8 f_300">
+                <div class="w BIG">
+                    Дія
+                </div>
+                <div class="f fac gap8">
+                    <button class="btn f_auto shadow f _f_ fac" type="submit">
+                        <img class="img_act" src="img/item_plus.png" alt="Додати">
+                    </button>
+                    <button class="btn f_auto shadow f _f_ fac" type="submit">
+                        <img class="img_act" src="img/item_minus.png" alt="Відняти">
+                    </button>
+                    <button class="btn f_auto shadow f _f_ fac" type="submit">
+                        <img class="img_act" src="img/item_new.png" alt="Нове">
+                    </button>
+                    <button class="btn f_auto shadow f _f_ fac" type="submit">
+                        <img class="img_act" src="img/item_delete.png" alt="Стерти">
+                    </button>
+                </div>
+            </div>
+        </form>
+        <!-- Вставка -->
+        <form action="" id="editing_stick_form" class="f fw w gap8 f_f">
+            <!--Вставки-->
+            <div class="f fc gap8 f_250">
+                <div class="BIG">
+                    Вставка
+                </div>
+                <div class="w f fc">
+                    <input type="text" name="tab_7_stick" list="tab_7_stick" placeholder="Оберіть виїмку" class="shadow pad8" required/>
+                    <datalist id="tab_7_stick" class="shadow">
+                        <option value="1999 Пуля бронза"/>
+                        <option value="2000 Пуля серебро"/>
+                        <option value="2001 Пуля золото"/>
+                    </datalist>
+                </div>
+            </div>
+            <!--К-сть-->
+            <div class="f fc gap8 f_80">
+                <div class="BIG">
+                    К-сть
+                </div>
+                <div class="shadow  h_50m f gap20 fac _br8 list_open">
+                    <input type="number" pattern="\d" required/>
+                </div>
+            </div>
+            <!--Специалист-->
+            <div class="f fc gap8 f_200">
+                <div class="w BIG">
+                    Працівник
+                </div>
+                <div class="w f fc">
+                    <input type="text" name="tab_7_master" list="tab_7_master" placeholder="Оберіть фахівця" class="shadow pad8" required/>
+                    <datalist id="tab_7_master" class="shadow">
+                        <option value="Василь Іванович"/>
+                        <option value="Олег Рибко"/>
+                        <option value="Андрій Круг"/>
+                        <option value="Олексій Швиряго"/>
+                        <option value="Олеся Повна"/>
+                    </datalist>
+                </div>
+            </div>
+            <!--Скрытый-->
+            <input type="hidden" name="action" value="stick_form">
+            <!--Действие-->
+            <div class="f fc gap8 f_300">
+                <div class="w BIG">
+                    Дія
+                </div>
+                <div class="f fac gap8">
+                    <button class="btn f_auto shadow f _f_ fac" type="submit">
+                        <img class="img_act" src="img/item_plus.png" alt="Додати">
+                    </button>
+                    <button class="btn f_auto shadow f _f_ fac" type="submit">
+                        <img class="img_act" src="img/item_minus.png" alt="Відняти">
+                    </button>
+                    <button class="btn f_auto shadow f _f_ fac" type="submit">
+                        <img class="img_act" src="img/item_new.png" alt="Нове">
+                    </button>
+                    <button class="btn f_auto shadow f _f_ fac" type="submit">
+                        <img class="img_act" src="img/item_delete.png" alt="Стерти">
+                    </button>
+                </div>
+            </div>
+        </form>
+        <!-- Фахівець -->
+        <form action="" id="editing_personal_form" class="f fw w gap8 f_f">
+            <!--Специалист-->
+            <div class="f fc gap8 f_auto">
+                <div class="w BIG">
+                    Працівник
+                </div>
+                <div class="w f fc">
+                    <input type="text" name="tab_7_master_master" list="tab_7_master_master" placeholder="Оберіть фахівця" class="shadow pad8" required/>
+                    <datalist id="tab_7_master_master" class="shadow">
+                        <option value="Василь Іванович"/>
+                        <option value="Олег Рибко"/>
+                        <option value="Андрій Круг"/>
+                        <option value="Олексій Швиряго"/>
+                        <option value="Олеся Повна"/>
+                    </datalist>
+                </div>
+            </div>
+            <input type="hidden" name="action" value="personal_form">
+            <!--Действие-->
+            <div class="f fc gap8 f_300">
+                <div class="w BIG">
+                    Дія
+                </div>
+                <div class="f fac gap8">
+                    <button class="btn f_auto shadow f _f_ fac" type="submit">
+                        <img class="img_act" src="img/item_new.png" alt="Нове">
+                    </button>
+                    <button class="btn f_auto shadow f _f_ fac" type="submit">
+                        <img class="img_act" src="img/item_delete.png" alt="Стерти">
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

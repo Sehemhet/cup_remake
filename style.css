@@ -1,0 +1,92 @@
+input[type="number"],
+ input[type="text"] {
+    width:100%;
+    padding:8px;
+    min-height: 50px;
+    background-color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    font: inherit;
+    appearance: none;
+    box-sizing: border-box;
+}
+
+input[type="text"]  {
+    /* styling */
+    /* остальные стили */
+    background-image:
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="rgba(47, 128, 237, 1)"><path d="M10 13.66L16.36 7.3a1 1 0 0 1 1.4 1.42l-7.07 7.05a1 1 0 0 1-1.4 0L2.22 8.72a1 1 0 1 1 1.42-1.42L10 13.66z"/></svg>');
+    background-position: calc(100% - 8px) center; /* Расположение стрелки */
+    background-size: 16px; /* Размер стрелки */
+    background-repeat: no-repeat;
+}
+input[type="text"]:hover {
+    background-image:
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="rgba(47, 128, 237, 1)"><path d="M10 13.66L16.36 7.3a1 1 0 0 1 1.4 1.42l-7.07 7.05a1 1 0 0 1-1.4 0L2.22 8.72a1 1 0 1 1 1.42-1.42L10 13.66z"/></svg>');
+    background-size: 18px; /* Размер стрелки */
+}
+input[type="text"]:focus {
+    background-image:
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="rgba(47, 128, 237, 1)"><path d="M10 6.34L3.64 12.7a1 1 0 0 1-1.4-1.42l7.07-7.05a1 1 0 0 1 1.4 0l7.07 7.05a1 1 0 0 1-1.4 1.42L10 6.34z"/></svg>');
+}
+
+.input_none_img {
+    background-image: none !important;
+}
+
+.act {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.tabs__block {
+    display:none;
+}
+
+.active-tab {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.tabs__block_stock {
+    display:none;
+}
+.tabs__block_stock:target {
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+}
+.active-tab-stock {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+#id_report_post > :nth-child(odd) {
+    background: var(--c4); /* ваш стиль фона */
+}
+
+
+.id_report_chapter_item_arrow {
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-align:center;
+        -ms-flex-align:center;
+            align-items:center;
+    font-size:30px;
+    -webkit-box-pack:center;
+        -ms-flex-pack:center;
+            justify-content:center;
+}
+.id_report_post_item {
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+}
+
+.img_act {
+    width:24px;
+}
