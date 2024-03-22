@@ -1,0 +1,149 @@
+//ТАБ 1
+jQuery(function($) {
+    $('#tab_1_form').submit(function(e) {
+        e.preventDefault();
+
+        // Собираем все данные формы
+        let formData = $(this).serialize();
+
+        // Отправляем данные на сервер методом AJAX
+        $.post({
+            url: 'обработчик.php', // Укажите путь к файлу-обработчику на сервере
+            data: formData,
+            success: function(res) {
+                // Выводим ответ сервера в консоль для отладки
+                console.log(res);
+                // Если ответ сервера содержит дату и время, обновляем их на странице
+                if (res.date && res.time) {
+                    $('#currentDateTime').text(res.date + ' ' + res.time);
+                }
+            }
+        });
+    });
+
+    // Обработчик для выбора типа действия (Піч или Брак)
+    $('#tab_1_oven, #tab_1_error').click(function() {
+        // Устанавливаем значение в скрытый инпут при клике на кнопку
+        $('#action_type').val($(this).attr('id'));
+    });
+});
+//ТАБ 2
+
+jQuery(function($) {
+    $('#tab_2_form').submit(function(e) {
+        e.preventDefault();
+
+        // Собираем все данные формы
+        let formData = $(this).serialize();
+
+        // Отправляем данные на сервер методом AJAX
+        $.post({
+            url: 'обработчик.php', // Укажите путь к файлу-обработчику на сервере
+            data: formData,
+            success: function(res) {
+                // Выводим ответ сервера в консоль для отладки
+                console.log(res);
+                // Если ответ сервера содержит дату и время, обновляем их на странице
+                if (res.date && res.time) {
+                    $('#currentDateTime').text(res.date + ' ' + res.time);
+                }
+            }
+        });
+    });
+
+    // Обработчик для выбора типа действия (Напівфабрикат, Брак или Повернути)
+    $('#tab_2_send, #tab_2_error, #tab_2_back').click(function() {
+        // Устанавливаем значение в скрытый инпут при клике на кнопку
+        $('#action_type').val($(this).attr('name'));
+    });
+});
+// ТАБ 3
+jQuery(function($) {
+    $('#tab_3_form').submit(function(e) {
+        e.preventDefault();
+
+        // Собираем все данные формы
+        let formData = $(this).serialize();
+
+        // Отправляем данные на сервер методом AJAX
+        $.post({
+            url: 'обработчик.php', // Укажите путь к файлу-обработчику на сервере
+            data: formData,
+            success: function(res) {
+                // Выводим ответ сервера в консоль для отладки
+                console.log(res);
+                // Если ответ сервера содержит дату и время, обновляем их на странице
+                if (res.date && res.time) {
+                    $('#currentDateTime').text(res.date + ' ' + res.time);
+                }
+            }
+        });
+    });
+
+    // Обработчик для выбора типа действия (Поклейка, Брак или Повернути)
+    $('#tab_3_send, #tab_3_error, #tab_3_back').click(function() {
+        // Устанавливаем значение в скрытый инпут при клике на кнопку
+        $('#action_type').val($(this).attr('name'));
+    });
+});
+
+//ТАБ 4
+jQuery(function($) {
+    $('#tab_4_form').submit(function(e) {
+        e.preventDefault();
+
+        // Собираем все данные формы
+        let formData = $(this).serialize();
+
+        // Отправляем данные на сервер методом AJAX
+        $.post({
+            url: 'обработчик.php', // Укажите путь к файлу-обработчику на сервере
+            data: formData,
+            success: function(res) {
+                // Выводим ответ сервера в консоль для отладки
+                console.log(res);
+                // Если ответ сервера содержит дату и время, обновляем их на странице
+                if (res.date && res.time) {
+                    $('#currentDateTime').text(res.date + ' ' + res.time);
+                }
+            }
+        });
+    });
+
+    // Обработчик для выбора типа действия (Готове, Брак или Повернути)
+    $('#tab_4_form').on('click', '.btn', function() {
+        // Устанавливаем значение в скрытый инпут при клике на кнопку
+        var actionType = $(this).text().trim();
+        $('input[name="action"]').val(actionType);
+    });
+});
+
+//ТАБ 5
+jQuery(function($) {
+    $('#tab_5_form').submit(function(e) {
+        e.preventDefault();
+
+        // Собираем все данные формы
+        let formData = $(this).serialize();
+
+        // Отправляем данные на сервер методом AJAX
+        $.post({
+            url: 'обработчик.php', // Укажите путь к файлу-обработчику на сервере
+            data: formData,
+            success: function(res) {
+                // Выводим ответ сервера в консоль для отладки
+                console.log(res);
+                // Если ответ сервера содержит дату и время, обновляем их на странице
+                if (res.date && res.time) {
+                    $('#currentDateTime').text(res.date + ' ' + res.time);
+                }
+            }
+        });
+    });
+
+    // Обработчик для выбора типа действия (Продано, Брак или Повернути)
+    $('#tab_5_send, #tab_5_error, #tab_5_back').click(function() {
+        // Устанавливаем значение в скрытый инпут при клике на кнопку
+        $('input[name="action"]').val($(this).attr('name'));
+    });
+});

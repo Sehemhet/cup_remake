@@ -107,7 +107,7 @@
                 К-сть
             </div>
             <div class="shadow  h_50m f gap20 fac _br8 list_open">
-                <input type="number" pattern="\d" required/>
+                <input type="number" name="tab_1_count" id="tab_1_count" pattern="\d" required/>
             </div>
         </div>
         <!--Виемка-->
@@ -116,7 +116,7 @@
                 Виїмка
             </div>
             <div class="w f fc">
-                <input type="text" name="tab_1_insert" list="tab_1_insert" placeholder="Оберіть виїмку" class="shadow pad8" required/>
+                <input type="text" name="tab_1_insert" list="tab_1_insert" placeholder="Оберіть виїмку" class="shadow pad8"/>
                 <datalist id="tab_1_insert" class="shadow">
                     <option value="Куля"/>
                     <option value="Герб"/>
@@ -148,15 +148,11 @@
                 Дія
             </div>
             <div class="shadow f gap8 h_50m">
-                <button class="btn btn_blue f_auto" type="submit"> Піч </button>
-                <button class="btn btn_red f_auto" type="submit"> Брак </button>
+                <button class="btn btn_blue f_auto" name="tab_1_send" type="submit"> Піч </button>
+                <button class="btn btn_red f_auto" name="tab_1_error" type="submit"> Брак </button>
             </div>
         </div>
     </form>
-    <script>
-
-    </script>
-
     <div class="f w fw gap30 list_stock">
         <div class="f fc gap8 shadow pad8 _br8 f_300 h300M">
             <h3>
@@ -168,7 +164,7 @@
                     <span>
                         100
                     </span>
-                    <span>
+                    <span class="c4">
                         Рюмка
                     </span>
                 </li>
@@ -176,7 +172,7 @@
                     <span>
                         2001
                     </span>
-                    <span>
+                    <span class="c4">
                         Стакан
                     </span>
                 </li>
@@ -184,7 +180,7 @@
                     <span>
                         1999
                     </span>
-                    <span>
+                    <span class="c4">
                         Пинта
                     </span>
                 </li>
@@ -196,13 +192,13 @@
             </h3>
             <input type="text" name="" placeholder="Пошук виїмки" id="search_list_insert" oninput="liveSearch('list_insert', this.value)">
             <ul id="list_insert" class="f fc gap8 h300M scroll">
-                <li class="f fac gap8 list_item">
+                <li class="f fac gap8 list_item c9">
                     Пуля
                 </li>
-                <li class="f fac gap8 list_item">
+                <li class="f fac gap8 list_item c9">
                     Герб
                 </li>
-                <li class="f fac gap8 list_item">
+                <li class="f fac gap8 list_item c9">
                     Прорез
                 </li>
             </ul>
@@ -217,7 +213,7 @@
                     <span>
                         100
                     </span>
-                    <span>
+                    <span class="c10">
                         Пуля бронза
                     </span>
                 </li>
@@ -225,7 +221,7 @@
                     <span>
                         2001
                     </span>
-                    <span>
+                    <span class="c10">
                         Пуля серебро
                     </span>
                 </li>
@@ -233,7 +229,7 @@
                     <span>
                         1999
                     </span>
-                    <span>
+                    <span class="c10">
                         Пуля золото
                     </span>
                 </li>
@@ -241,7 +237,7 @@
                     <span>
                         100
                     </span>
-                    <span>
+                    <span class="c10">
                         Пуля бронза
                     </span>
                 </li>
@@ -249,7 +245,7 @@
                     <span>
                         2001
                     </span>
-                    <span>
+                    <span class="c10">
                         Пуля серебро
                     </span>
                 </li>
@@ -257,7 +253,7 @@
                     <span>
                         1999
                     </span>
-                    <span>
+                    <span class="c10">
                         Пуля золото
                     </span>
                 </li>
@@ -265,7 +261,7 @@
                     <span>
                         1999
                     </span>
-                    <span>
+                    <span class="c10">
                         Пуля золото
                     </span>
                 </li>
@@ -273,7 +269,7 @@
                     <span>
                         100
                     </span>
-                    <span>
+                    <span class="c10">
                         Пуля бронза
                     </span>
                 </li>
@@ -281,7 +277,7 @@
                     <span>
                         2001
                     </span>
-                    <span>
+                    <span class="c10">
                         Пуля серебро
                     </span>
                 </li>
@@ -289,14 +285,13 @@
                     <span>
                         1999
                     </span>
-                    <span>
+                    <span class="c10">
                         Пуля золото
                     </span>
                 </li>
             </ul>
         </div>
     </div>
-
 </section>
 
 <!--ТАБ 2 (ПЕЧЬ)-->
@@ -352,7 +347,7 @@
                 К-сть
             </div>
             <div class="shadow  h_50m f gap20 fac _br8 list_open">
-                <input type="number" pattern="\d" required/>
+                <input type="number" name="tab_2_count" id="tab_2_count" pattern="\d" required/>
             </div>
         </div>
         <!--Специалист-->
@@ -379,15 +374,12 @@
                 Дія
             </div>
             <div class="shadow f gap8 h_50m">
-                <button class="btn btn_blue f_auto" type="submit"> Напівфабрикат </button>
-                <button class="btn btn_red f_auto" type="submit"> Брак </button>
-                <button class="btn btn_black f_auto" type="submit"> Повернути </button>
+                <button class="btn btn_blue f_auto" name="tab_2_send" type="submit"> Напівфабрикат </button>
+                <button class="btn btn_red f_auto" name="tab_2_error" type="submit"> Брак </button>
+                <button class="btn btn_black f_auto" name="tab_2_back" type="submit"> Повернути </button>
             </div>
         </div>
     </form>
-    <script>
-
-    </script>
     <div class="f w fw gap30 list_stock">
         <div class="f fc gap8 shadow pad8 _br8 f_300 h300M">
             <h3>
@@ -486,7 +478,7 @@
                 К-сть
             </div>
             <div class="shadow  h_50m f gap20 fac _br8 list_open">
-                <input type="number" pattern="\d" required/>
+                <input type="number" name="tab_3_count" pattern="\d" required/>
             </div>
         </div>
         <!--Вставки-->
@@ -498,7 +490,7 @@
                         Вставка 1
                     </div>
                     <div class="w f fc">
-                        <input type="text" name="tab_3_stick_1" list="tab_3_stick_1" placeholder="Оберіть виїмку" class="shadow pad8" required/>
+                        <input type="text" name="tab_3_stick_1" list="tab_3_stick_1" placeholder="Оберіть виїмку" class="shadow pad8" oninput="addNumber('tab_3_stick_1','tab_3_stick_1_count')"/>
                         <datalist id="tab_3_stick_1" class="shadow">
                             <option value="1999 Пуля бронза"/>
                             <option value="2000 Пуля серебро"/>
@@ -512,7 +504,7 @@
                         К-сть
                     </div>
                     <div class="shadow  h_50m f gap20 fac _br8 list_open">
-                        <input type="number" pattern="\d" required/>
+                        <input type="number" name="tab_3_stick_1_count" pattern="\d"/>
                     </div>
                 </div>
             </div>
@@ -523,7 +515,7 @@
                         Вставка 2
                     </div>
                     <div class="w f fc">
-                        <input type="text" name="tab_3_stick_2" list="tab_3_stick_2" placeholder="Оберіть виїмку" class="shadow pad8" required/>
+                        <input type="text" name="tab_3_stick_2" list="tab_3_stick_2" placeholder="Оберіть виїмку" class="shadow pad8" oninput="addNumber('tab_3_stick_2','tab_3_stick_2_count')"/>
                         <datalist id="tab_3_stick_2" class="shadow">
                             <option value="1999 Пуля бронза"/>
                             <option value="2000 Пуля серебро"/>
@@ -537,7 +529,7 @@
                         К-сть
                     </div>
                     <div class="shadow  h_50m f gap20 fac _br8 list_open">
-                        <input type="number" pattern="\d" required/>
+                        <input type="number" name="tab_3_stick_2_count" pattern="\d"/>
                     </div>
                 </div>
             </div>
@@ -548,7 +540,7 @@
                         Вставка 3
                     </div>
                     <div class="w f fc">
-                        <input type="text" name="tab_3_stick_3" list="tab_3_stick_3" placeholder="Оберіть виїмку" class="shadow pad8" required/>
+                        <input type="text" name="tab_3_stick_3" list="tab_3_stick_3" placeholder="Оберіть виїмку" class="shadow pad8" oninput="addNumber('tab_3_stick_3','tab_3_stick_3_count')"/>
                         <datalist id="tab_3_stick_3" class="shadow">
                             <option value="1999 Пуля бронза"/>
                             <option value="2000 Пуля серебро"/>
@@ -562,7 +554,7 @@
                         К-сть
                     </div>
                     <div class="shadow  h_50m f gap20 fac _br8 list_open">
-                        <input type="number" pattern="\d" required/>
+                        <input type="number" name="tab_3_stick_3_count" pattern="\d"/>
                     </div>
                 </div>
             </div>
@@ -573,7 +565,7 @@
                         Вставка індівідуальна
                     </div>
                     <div class="w f fc">
-                        <input type="text" placeholder="індівідуальна" class="shadow pad8" required/>
+                        <input type="text" name="tab_3_stick_4" placeholder="індівідуальна" class="shadow pad8" oninput="addNumber('tab_3_stick_4','tab_3_stick_4_count')"/>
                     </div>
                 </div>
                 <!--К-сть-->
@@ -582,11 +574,10 @@
                         К-сть
                     </div>
                     <div class="shadow  h_50m f gap20 fac _br8 list_open">
-                        <input type="number" pattern="\d" required/>
+                        <input type="number" name="tab_3_stick_4_count" pattern="\d"/>
                     </div>
                 </div>
             </div>
-
         </div>
         <!--Специалист-->
         <div class="f fc gap8 f_200">
@@ -612,15 +603,12 @@
                 Дія
             </div>
             <div class="shadow f gap8 h_50m">
-                <button class="btn btn_blue f_auto" type="submit"> Поклейка </button>
-                <button class="btn btn_red f_auto" type="submit"> Брак </button>
-                <button class="btn btn_black f_auto" type="submit"> Повернути </button>
+                <button class="btn btn_blue f_auto" name="tab_3_send" type="submit"> Поклейка </button>
+                <button class="btn btn_red f_auto" name="tab_3_error" type="submit"> Брак </button>
+                <button class="btn btn_black f_auto" name="tab_3_back" type="submit"> Повернути </button>
             </div>
         </div>
     </form>
-    <script>
-
-    </script>
     <div class="f w fw gap30 list_stock">
         <div class="f fc gap8 shadow pad8 _br8 f_300 h300M">
             <h3>
@@ -719,7 +707,7 @@
                 К-сть
             </div>
             <div class="shadow  h_50m f gap20 fac _br8 list_open">
-                <input type="number" pattern="\d" required/>
+                <input type="number" name="tab_4_count" pattern="\d" required/>
             </div>
         </div>
         <!--Специалист-->
@@ -746,15 +734,12 @@
                 Дія
             </div>
             <div class="shadow f gap8 h_50m">
-                <button class="btn btn_blue f_auto" type="submit"> Готове </button>
-                <button class="btn btn_red f_auto" type="submit"> Брак </button>
-                <button class="btn btn_black f_auto" type="submit"> Повернути </button>
+                <button class="btn btn_blue f_auto" name="tab_4_send" type="submit"> Готове </button>
+                <button class="btn btn_red f_auto" name="tab_4_error" type="submit"> Брак </button>
+                <button class="btn btn_black f_auto" name="tab_4_back" type="submit"> Повернути </button>
             </div>
         </div>
     </form>
-    <script>
-
-    </script>
     <div class="f w fw gap30 list_stock">
         <div class="f fc gap8 shadow pad8 _br8 f_300 h300M">
             <h3>
@@ -883,7 +868,7 @@
                 К-сть
             </div>
             <div class="shadow  h_50m f gap20 fac _br8 list_open">
-                <input type="number" pattern="\d" required/>
+                <input type="number" name="tab_5_count" pattern="\d" required/>
             </div>
         </div>
         <!--Специалист-->
@@ -910,15 +895,85 @@
                 Дія
             </div>
             <div class="shadow f gap8 h_50m">
-                <button class="btn btn_blue f_auto" type="submit"> Продано </button>
-                <button class="btn btn_red f_auto" type="submit"> Брак </button>
-                <button class="btn btn_black f_auto" type="submit"> Повернути </button>
+                <button class="btn btn_blue f_auto" name="tab_5_send" type="submit"> Продано </button>
+                <button class="btn btn_red f_auto" name="tab_5_error" type="submit"> Брак </button>
+                <button class="btn btn_black f_auto" name="tab_5_back" type="submit"> Повернути </button>
             </div>
         </div>
     </form>
-    <script>
-
-    </script>
+    <div class="f w fw gap30 list_stock">
+        <div class="f fc gap8 shadow pad8 _br8 f_300 h300M">
+            <h3>
+                Продукт
+            </h3>
+            <input type="text" name="" placeholder="Пошук товару" id="tab_5_list_search" oninput="liveSearch('tab_5_list', this.value)">
+            <ul id="tab_5_list" class="f fc gap8 h300M scroll">
+                <li class="f fac gap8 list_item">
+                    <span>
+                        100
+                    </span>
+                    <span class="c4">
+                        Рюмка
+                    </span>
+                    <span class="c9">
+                        Пуля
+                    </span>
+                    <ul>
+                        <li class="f fac gap8 c10">
+                            <span>
+                                Пуля бронза
+                            </span>
+                            <span>
+                                2
+                            </span>
+                        </li>
+                    </ul>
+                </li>
+                <li class="f fac gap8 list_item">
+                    <span>
+                        2001
+                    </span>
+                    <span class="c4">
+                        Стакан
+                    </span>
+                    <span class="c9">
+                        Прорез
+                    </span>
+                    <ul>
+                        <li class="f fac gap8 c10">
+                            <span>
+                                Кредитка
+                            </span>
+                            <span>
+                                1
+                            </span>
+                        </li>
+                    </ul>
+                </li>
+                <li class="f fac gap8 list_item">
+                    <span>
+                        1999
+                    </span>
+                    <span class="c4">
+                        Пинта
+                    </span>
+                    <span class="c9">
+                        Герб
+                    </span>
+                    <ul>
+                        <li class="f fac gap8 c10">
+                            <span>
+                                Пуля золото
+                            </span>
+                            <span>
+                                3
+                            </span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
 </section>
 
 <!--ТАБ 6 (ОТЧЕТ)-->
@@ -1060,7 +1115,7 @@
                     К-сть
                 </div>
                 <div class="shadow  h_50m f gap20 fac _br8 list_open">
-                    <input type="number" pattern="\d" required/>
+                    <input type="number" name="tab_7_glass_count" pattern="\d" required/>
                 </div>
             </div>
             <!--Специалист-->
@@ -1087,16 +1142,16 @@
                     Дія
                 </div>
                 <div class="f fac gap8">
-                    <button class="btn f_auto shadow f _f_ fac" type="submit">
+                    <button class="btn f_auto shadow f _f_ fac" name="tab_7_glass_plus" type="submit">
                         <img class="img_act" src="img/item_plus.png" alt="Додати">
                     </button>
-                    <button class="btn f_auto shadow f _f_ fac" type="submit">
+                    <button class="btn f_auto shadow f _f_ fac" name="tab_7_glass_minus" type="submit">
                         <img class="img_act" src="img/item_minus.png" alt="Відняти">
                     </button>
-                    <button class="btn f_auto shadow f _f_ fac" type="submit">
+                    <button class="btn f_auto shadow f _f_ fac" name="tab_7_glass_add" type="submit">
                         <img class="img_act" src="img/item_new.png" alt="Нове">
                     </button>
-                    <button class="btn f_auto shadow f _f_ fac" type="submit">
+                    <button class="btn f_auto shadow f _f_ fac" name="tab_7_glass_delete" type="submit">
                         <img class="img_act" src="img/item_delete.png" alt="Стерти">
                     </button>
                 </div>
@@ -1124,7 +1179,7 @@
                     К-сть
                 </div>
                 <div class="shadow  h_50m f gap20 fac _br8 list_open">
-                    <input type="number" pattern="\d" required/>
+                    <input type="number" name="tab_7_insert_count" pattern="\d" required/>
                 </div>
             </div>
             <!--Специалист-->
@@ -1151,16 +1206,16 @@
                     Дія
                 </div>
                 <div class="f fac gap8">
-                    <button class="btn f_auto shadow f _f_ fac" type="submit">
+                    <button class="btn f_auto shadow f _f_ fac" name="tab_7_insert_plus" type="submit">
                         <img class="img_act" src="img/item_plus.png" alt="Додати">
                     </button>
-                    <button class="btn f_auto shadow f _f_ fac" type="submit">
+                    <button class="btn f_auto shadow f _f_ fac" name="tab_7_insert_minus" type="submit">
                         <img class="img_act" src="img/item_minus.png" alt="Відняти">
                     </button>
-                    <button class="btn f_auto shadow f _f_ fac" type="submit">
+                    <button class="btn f_auto shadow f _f_ fac" name="tab_7_insert_add" type="submit">
                         <img class="img_act" src="img/item_new.png" alt="Нове">
                     </button>
-                    <button class="btn f_auto shadow f _f_ fac" type="submit">
+                    <button class="btn f_auto shadow f _f_ fac" name="tab_7_insert_delete" type="submit">
                         <img class="img_act" src="img/item_delete.png" alt="Стерти">
                     </button>
                 </div>
@@ -1188,7 +1243,7 @@
                     К-сть
                 </div>
                 <div class="shadow  h_50m f gap20 fac _br8 list_open">
-                    <input type="number" pattern="\d" required/>
+                    <input type="number" name="tab_7_stick_count" pattern="\d" required/>
                 </div>
             </div>
             <!--Специалист-->
@@ -1215,16 +1270,16 @@
                     Дія
                 </div>
                 <div class="f fac gap8">
-                    <button class="btn f_auto shadow f _f_ fac" type="submit">
+                    <button class="btn f_auto shadow f _f_ fac" name="tab_7_stick_plus" type="submit">
                         <img class="img_act" src="img/item_plus.png" alt="Додати">
                     </button>
-                    <button class="btn f_auto shadow f _f_ fac" type="submit">
+                    <button class="btn f_auto shadow f _f_ fac" name="tab_7_stick_minus" type="submit">
                         <img class="img_act" src="img/item_minus.png" alt="Відняти">
                     </button>
-                    <button class="btn f_auto shadow f _f_ fac" type="submit">
+                    <button class="btn f_auto shadow f _f_ fac" name="tab_7_stick_add" type="submit">
                         <img class="img_act" src="img/item_new.png" alt="Нове">
                     </button>
-                    <button class="btn f_auto shadow f _f_ fac" type="submit">
+                    <button class="btn f_auto shadow f _f_ fac" name="tab_7_stick_delete" type="submit">
                         <img class="img_act" src="img/item_delete.png" alt="Стерти">
                     </button>
                 </div>
@@ -1255,10 +1310,10 @@
                     Дія
                 </div>
                 <div class="f fac gap8">
-                    <button class="btn f_auto shadow f _f_ fac" type="submit">
+                    <button class="btn f_auto shadow f _f_ fac" name="tab_7_master_add" type="submit">
                         <img class="img_act" src="img/item_new.png" alt="Нове">
                     </button>
-                    <button class="btn f_auto shadow f _f_ fac" type="submit">
+                    <button class="btn f_auto shadow f _f_ fac" name="tab_7_master_delete" type="submit">
                         <img class="img_act" src="img/item_delete.png" alt="Стерти">
                     </button>
                 </div>
@@ -1268,5 +1323,6 @@
 </section>
 
 <script src="script.js"></script>
+<script src="ajax.js"></script>
 </body>
 </html>

@@ -154,3 +154,21 @@ function alignWidths(className) {
         item.style.width = maxWidth + 'px';
     });
 }
+
+
+
+function addNumber(fieldName, counterName) {
+    // Получаем значение поля
+    var fieldValue = document.getElementsByName(fieldName)[0].value;
+    // Получаем элемент счетчика
+    var counterField = document.getElementsByName(counterName)[0];
+
+    // Проверяем, не пустое ли поле
+    if (fieldValue !== '') {
+        // Если поле не пустое, делаем счетчик обязательным
+        counterField.required = true;
+    } else {
+        // Если поле пустое, удаляем обязательность счетчика
+        counterField.required = false;
+    }
+}
